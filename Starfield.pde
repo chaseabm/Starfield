@@ -11,6 +11,7 @@ void setup()
   }
   theGalaxy[0] = new OddballParticle();
   theGalaxy[1]  = new JumboParticle();
+  noCursor();
 }
 void draw()
 {
@@ -73,8 +74,7 @@ interface Galaxy
 public class OddballParticle implements Galaxy
 {
   double myX = 300;
-  double myY = 200;
-  int increment = 3;
+  double myY = 300;
   public void show()
   {
     //spaceship
@@ -91,11 +91,8 @@ public class OddballParticle implements Galaxy
   }
   public void move()
   {
-    myX+=increment;
-    if (myX > 400)
-      increment = -increment;
-    if (myX < 200)
-      increment = -increment;
+    myX = mouseX;
+    myY = mouseY;
   }
 }
 
